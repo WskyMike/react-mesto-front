@@ -1,0 +1,7 @@
+.popup__input-container:not(:last-of-type) {
+  margin-bottom: 13px;
+  min-height: 40px;
+}
+
+
+

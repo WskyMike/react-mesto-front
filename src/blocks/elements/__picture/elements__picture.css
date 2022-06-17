@@ -1,0 +1,15 @@
+.elements__picture {
+  width: 282px;
+  height: 282px;
+  border-radius: 10px 10px 0px 0px;
+  object-fit: cover;
+  object-position: center;
+  transition: 0.3s;
+  opacity: 1;
+  display: block;
+}
+
+.elements__picture:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
