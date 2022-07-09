@@ -1,11 +1,21 @@
-function Footer() {
+import { useLocation } from "react-router-dom";
 
-  const currentYear = (new Date).getFullYear();
+function Footer() {
+  const location = useLocation();
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer">
-      <p className="footer__author">© {currentYear} Михаил Соснин</p>
-    </footer>
+    <>
+      {location.pathname === "/sign-up" ? (
+        <></>
+      ) : location.pathname === "/sign-in" ? (
+        <></>
+      ) : (
+        <footer className="footer">
+          <p className="footer__author">© {currentYear} Михаил Соснин</p>
+        </footer>
+      )}
+    </>
   );
 }
 

@@ -1,0 +1,14 @@
+.header__auth {
+    line-height: 22px;
+    color: #fff;
+    transition: .2s;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+  }
+  
+  .header__auth:hover {
+    cursor: pointer;
+    opacity: .6;
+  }
