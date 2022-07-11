@@ -1,6 +1,6 @@
 function PopupWithForm(props) {
   return (
-    <div className={`popup popup_style_${props.name} ${props.isOpen ? "popup_opened" : ""}`} >
+    <div className={`popup popup_style_${props.name} ${props.isOpen && 'popup_opened'}`} >
       <div className="popup__container">
         <h2 className="popup__title">{props.title}</h2>
         <button
@@ -15,7 +15,7 @@ function PopupWithForm(props) {
           name={props.name}
           autoComplete="off"
           method="get"
-          noValidate
+          // noValidate
           onSubmit={props.onSubmit}
         >
           {props.children}

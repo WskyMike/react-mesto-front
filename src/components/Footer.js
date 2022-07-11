@@ -1,22 +1,14 @@
-import { useLocation } from "react-router-dom";
+import { Route } from "react-router-dom";
 
-function Footer() {
-  const location = useLocation();
+export default function Footer() {
+  
   const currentYear = new Date().getFullYear();
 
   return (
-    <>
-      {location.pathname === "/sign-up" ? (
-        <></>
-      ) : location.pathname === "/sign-in" ? (
-        <></>
-      ) : (
-        <footer className="footer">
-          <p className="footer__author">© {currentYear} Михаил Соснин</p>
-        </footer>
-      )}
-    </>
+    <Route exact path="/">
+      <footer className="footer">
+        <p className="footer__author">© {currentYear} Михаил Соснин</p>
+      </footer>
+    </Route>
   );
 }
-
-export default Footer;

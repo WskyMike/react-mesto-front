@@ -1,9 +1,8 @@
 import HeaderLogo from "../images/header_logo.svg";
 import React from "react";
-import { Link, withRouter, useLocation } from "react-router-dom";
+import { Link, withRouter, Route, Switch } from "react-router-dom";
 
 function Header(props) {
-  const location = useLocation();
 
   return (
     <header className="header">
@@ -13,13 +12,16 @@ function Header(props) {
           <p className="header__usermail">{props.email}</p>
         ) : (
           <>
-            { 
-              location.pathname === "/sign-in" ? (
-                <Link className="header__auth" to="/sign-up"> Регистрация </Link>
-              ) : (
-                <Link className="header__auth" to="/sign-in"> Войти </Link>
-              ) 
-            }
+            <Switch>
+              <Route path='/sign-up'>
+                <Link className="header__auth" to="/sign-in"> Войти </Link> 
+              </Route>
+            </Switch>
+            <Switch>
+              <Route path='/sign-in'>
+                <Link className="header__auth" to="/sign-up"> Регистраця </Link> 
+              </Route>
+            </Switch>
           </>
         )}
         {props.loggedIn && (
@@ -31,3 +33,9 @@ function Header(props) {
 }
 
 export default withRouter(Header);
+
+<Switch>
+   <Route path='/sign-up'>
+       <Link className="header__auth" to="/sign-in"> Войти </Link> 
+   </Route>
+</Switch>

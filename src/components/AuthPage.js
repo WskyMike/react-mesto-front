@@ -8,7 +8,6 @@ export default function AuthPage(props) {
         className="auth__form"
         name={props.formName}
         onSubmit={props.onSubmit}
-        noValidate
       >
         <h1 className="auth__title">{props.title}</h1>
         {props.children}

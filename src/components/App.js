@@ -50,9 +50,12 @@ function App() {
 
   const history = useHistory();
 
-  // Обновление после каждого получения массива с данными
+  // Обновление после каждого действия с компонентами.
   useEffect(() => {
-    // Получим данные с сервера
+    // Получим данные с сервера, если loggedIn = true
+    if (loggedIn === false) {
+      return;
+    }
     api.getProfile()
       .then((res) => {
         setCurrentUser(res);
@@ -64,7 +67,7 @@ function App() {
         setCards(res.map((card) => card));
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [loggedIn]);
 
   // Попап АВАТАР
   function handleEditAvatarClick() {
@@ -134,11 +137,11 @@ function App() {
     setIsInfoTooltipOpen(false);
   }
   
-  function handleEscClose(evt) {
-    if (evt.key === "Escape") {
-      closeAllPopups();
-    }
-  };
+  // function handleEscClose(evt) {
+  //   if (evt.key === "Escape") {
+  //     closeAllPopups();
+  //   }
+  // };
 
   // Попап ФУЛЛСКРИН (клик на карточку)
   function handleCardClick(card) {
@@ -163,6 +166,7 @@ function App() {
   function handleRegister({ password, email }) {
     auth.registration(password, email)
       .then(() => {
+        // Message для infoToolTip
         setMessage({
           imgPath: positiveAuthImg,
           text: "Вы успешно зарегистрировались!",

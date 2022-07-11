@@ -1,6 +1,6 @@
 function ImagePopup({ card, onClose }) {
   return (
-    <div className={`popup popup_style_fullscreen-img ${card ? "popup_opened" : ""}`}>
+    <div className={`popup popup_style_fullscreen-img ${card && 'popup_opened'}`}>
       <div className="popup__fullscreen-container">
         <button
           className="popup__close popup__close_type_fullscreen"
