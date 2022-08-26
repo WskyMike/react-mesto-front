@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "npm run build && scp -r ./build/* mw-cloud@51.250.87.66:/home/mw-cloud/react-mesto-front/build"
   },
   "eslintConfig": {
     "extends": [
