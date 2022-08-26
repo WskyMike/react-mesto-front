@@ -1,7 +1,7 @@
 {
   "name": "mesto-react",
   "version": "0.1.0",
-  "homepage": "https://github.com/WskyMike/react-mesto-front.git",
+  "homepage": "https://mesto.front.nomorepartiesxyz.ru/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
