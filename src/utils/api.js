@@ -78,10 +78,18 @@ class Api {
   }
 };
 
+// const api = new Api({
+//   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-39',
+//   headers: {
+//     authorization: '654b92bf-739a-4fff-ad65-57ae2eab02aa',
+//     'Content-Type': 'application/json'
+//   }
+// });
+
 const api = new Api({
-  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-39',
+  baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-41',
   headers: {
-    authorization: '654b92bf-739a-4fff-ad65-57ae2eab02aa',
+    authorization: '1afa3831-c8aa-4436-b7cb-d726f3c3dbb3',
     'Content-Type': 'application/json'
   }
 });
